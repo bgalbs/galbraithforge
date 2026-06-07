@@ -53,15 +53,6 @@
       box-shadow: 0 20px 60px rgba(26, 34, 48, 0.12);
     }
 
-    .eyebrow {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
-
     h1 {
       font-family: 'Fraunces', Georgia, serif;
       font-weight: 600;
@@ -115,12 +106,8 @@
 
   <main class="wrap">
     <div class="card">
-      <div class="eyebrow">Galbraith Forge</div>
-      <h1>Software, built and backed.</h1>
-      <p class="lede">
-        A small studio crafting custom software and investing in the
-        technology that compounds.
-      </p>
+      <h1>Galbraith Forge</h1>
+      <p class="lede">Tech development and investing.</p>
       <a class="contact" href="mailto:info@galbraithforge.com">
         info@galbraithforge.com
       </a>
@@ -138,9 +125,10 @@
     // keeps the moody feel of Clouds2 without the marching-plane artifacts.
     VANTA.CLOUDS({
       el: '#bg',
-      mouseControls: true,
-      touchControls: true,
+      mouseControls: false,
+      touchControls: false,
       gyroControls: false,
+      mouseEase: false,
       minHeight: 200.0,
       minWidth: 200.0,
       scale: 1.0,
