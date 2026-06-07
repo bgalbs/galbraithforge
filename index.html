@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galbraith Forge</title>
+  <meta name="description" content="Galbraith Forge LLC — custom software and technology investing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #1a2230;
+      --muted: #5a6675;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+
+    #bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+
+    .wrap {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(14px) saturate(140%);
+      -webkit-backdrop-filter: blur(14px) saturate(140%);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 3.25rem 2.75rem;
+      max-width: 540px;
+      box-shadow: 0 20px 60px rgba(26, 34, 48, 0.12);
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(2.4rem, 7vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.1rem;
+    }
+
+    p.lede {
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 38ch;
+      margin: 0 auto 2rem;
+    }
+
+    a.contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      font-size: 0.98rem;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      background: rgba(26, 34, 48, 0.06);
+      border: 1px solid rgba(26, 34, 48, 0.12);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    a.contact:hover {
+      background: rgba(26, 34, 48, 0.1);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div id="bg"></div>
+
+  <main class="wrap">
+    <div class="card">
+      <div class="eyebrow">Galbraith Forge</div>
+      <h1>Software, built and backed.</h1>
+      <p class="lede">
+        A small studio crafting custom software and investing in the
+        technology that compounds.
+      </p>
+      <a class="contact" href="mailto:info@galbraithforge.com">
+        info@galbraithforge.com
+      </a>
+    </div>
+  </main>
+
+  <footer>© <span id="year"></span> Galbraith Forge LLC</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds2.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    VANTA.CLOUDS2({
+      el: '#bg',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      texturePath: './noise.png',
+      skyColor: 0x68b8d7,
+      cloudColor: 0xadc1de,
+      lightColor: 0xffffff,
+      speed: 0.9,
+    });
+  </script>
+</body>
+</html>
