@@ -130,11 +130,13 @@
   <footer>© <span id="year"></span> Galbraith Forge LLC</footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.clouds.min.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    VANTA.CLOUDS2({
+    // Clouds v1 — pushed to a dark twilight palette (cool, no warm sun) so it
+    // keeps the moody feel of Clouds2 without the marching-plane artifacts.
+    VANTA.CLOUDS({
       el: '#bg',
       mouseControls: true,
       touchControls: true,
@@ -142,11 +144,14 @@
       minHeight: 200.0,
       minWidth: 200.0,
       scale: 1.0,
-      texturePath: './noise.png',
-      skyColor: 0x68b8d7,
-      cloudColor: 0xadc1de,
-      lightColor: 0xffffff,
-      speed: 0.9,
+      backgroundColor: 0x0a0e14,
+      skyColor: 0x10202f,
+      cloudColor: 0x46586d,
+      cloudShadowColor: 0x05080d,
+      sunColor: 0x33485e,
+      sunGlareColor: 0x1d2935,
+      sunlightColor: 0x3a526b,
+      speed: 0.7,
     });
   </script>
 </body>
